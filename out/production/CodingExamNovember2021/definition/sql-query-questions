@@ -2,18 +2,39 @@ This file contains SQL questions.
 Please read the questions and answer.
 
 What is Database?
-A.
+A. an organized collection of structured information that can be easily accessed.
 
 What is DBMS?
+Database Management System Software is designed to store, retrieve, define, and manage data in a database.
+
 What is the difference between SQL and MySQL?
+SQL is a Structured Query Language which is a programing language used to communicate with a database.
+MySQL is an open source RDMBS which allows users to store data.
+
 What is RDBMS? How is it different from DBMS?
+RDBMS is a relational DBMS. It is different from DBMS because it supports multiple users, stores data in tables
+rather than files, has multiple levels of security, and does not allow data redundancy.
+
 What are Tables and Fields?
+tables are database objects comprised of rows and columns. Fields are those columns and describe specific information.
+
 What is SQL?
+SQL is a Structured Query Language which is a programing language used to access and manipulate a database.
+
 What are Constraints in SQL?
+they are used to specify rules for data in a table by limiting what type of data can go into it.
+
 What is a Primary Key?
+uniquely identifies each row in a table.
+
 What is a Foreign Key?
+prevents actions that would destroy links between tables.
+
 What is Normalization?
+a technique for organizing tables to minimize data redundancy and prevent unrelated data from being stored in a table.
+
 What is Denormalization?
+denormalization is the process of adding redundant data to a normalized data structure to improve read performance.
 
 You have 2 tables given below.
 
@@ -34,13 +55,38 @@ CustomerID	   CustomerName	    CustomerPhone	     Country
 Please do the following on above Order table and Customer table:
 
 Inner Join:
+SELECT Order.OrderID, Customer.CustomerName
+FROM Order
+INNER JOIN Customer
+ON Order.CustomerID = Customer.CustomerID;
+
 Left Join:
+SELECT Order.OrderID, Customer.CustomerName
+FROM Order
+LEFT JOIN Customer
+ON Order.CustomerID = Customer.CustomerID;
+
 Right Join:
+SELECT Order.OrderID, Customer.CustomerName
+FROM Order
+RIGHT JOIN Customer
+ON Order.CustomerID = Customer.CustomerID;
+
 Full Join:
+SELECT Order.OrderID, Customer.CustomerName
+FROM Order
+FULL OUTER JOIN Customer
+ON Order.CustomerID = Customer.CustomerID;
 
 On Customer Table, please Insert one row.
+INSERT INTO Customer(CustomerID, CustomerName, CustomerPhone, Country)
+VALUES (4, Will Williams, 1-800-555-1234, UK);
 
 On Order Table, please Update one row.
+UPDATE Order
+SET OrderID = '23214'  , OrderDate = '2012-11-23'
+WHERE CustomerID = 1;
+
 
 
 
