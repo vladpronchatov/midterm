@@ -63,29 +63,45 @@ Does java support multiple inheritance, explain why or why not?
 Java does not support multiple inheritance.
 
 What is method overloading and when it happens?
+when a class has more than one method with the same name but different parameters. it is used to make it easier to
+read a program if there is only one operation being performed with different parameters.
 
 Explain exceptions in java and how to handle it.
+Exceptions in java are events that happen at runtime that disrupt the execution of code in a program.
+It is handled using the try-catch method.
 
 What is static keyword in java? How it has been used in variables and methods ?
+Static keyword means that variable or method can be accessed without creating an object of the class.
 
 What is final and how it has been used variables and methods?
+final is a keyword which modifies a variable, method, or class. Final makes variables constant so the value
+cannot change. Final methods prevents method overriding.
 
 What is final, finally and finalize?
+final is used to apply restrictions to a class, method, or variable.
+finally is part of the try-catch block and runs code even if exception occurs.
+finalize  is a method used to clean up before object is garbage collected.
 
 What is a constructor ?
+a method used to initialize objects.
 
 Can we have multiple constructors in a class?
+There can be multiple contructors as long as the parameters are different.
 
 If we don't have a constructor declared, what is called during the object creation?
+the default constructor is called with an empty argument.
 
 What is "this" keyword in java ?
+this is a variable that refers to the current object of a method.
 
 What is "super" keyword in java? How many possible way can you use?
+super is used to refer to parent class objects. it is used with variables, constructors, and methods.
 
 What is JVM stand for?
 Java Virtual Machine.
 
 Is JVM platform independent?
+JVM is platform-dependent and different JVM is needed for different OS.
 
 What version of java are you using?
 17.0.1
@@ -134,6 +150,7 @@ What is Iterator?
 an object that can be used to loop through collections.
 
 Which one will take more memory, an int or Integer?
+int is a primitive data type which takes 4 Bytes while Integer is a object which takes 16 bytes to store its value.
 
 Why is String Immutable in Java?
 String is immutable because it is threadsafe and cannot be changed.
@@ -148,6 +165,8 @@ What is JIT stands for?
 just-in-time compiler is part of JRE which improves performance at runtime.
 
 Explain Java Heap space and Garbage collection?
+Java objects are in heap. heap is created when JVM runs. when heap becomes full, garbage is collected.
+objects that are no longer used are cleared to make space for new objects.
 
 Can you guarantee the garbage collection process?
 No, it cannot be guaranteed if references are lost.
@@ -168,6 +187,7 @@ What is Framework?
 Framework is a body that contains pre-written codes used by java developers.
 
 What are the testing Framework available in java?
+JUnit, TestNG, Serenity, Selenium, Cucumber, JBehave, Gauge, Spock
 
 Difference between jUnit and testNG?
 testNG can run parallel tests, supports advanced annotation, has dependency tests, and can group tests.
