@@ -4,6 +4,12 @@ package math.problems;
  * Created by mrahman on 04/22/17.
  */
 public class FindMissingNumber {
+    public static int findMissingNumber(int[] num) {
+        int n = num.length;
+        int sum = ((n+1)*(n+2))/2;
+        for (int j : num) sum -= j;
+        return sum;
+    }
 
     public static void main(String[] args) {
         /*
@@ -12,6 +18,7 @@ public class FindMissingNumber {
          * Write java code to find the missing number from the array. Write static helper method to find it.
          */
          int [] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
+         System.out.println(findMissingNumber(array));
 
     }
 }
