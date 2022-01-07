@@ -2,11 +2,11 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo implements Employee {
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
- * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
+ * then inherit that abstract class into EmployeeInfo class.Once you are done with designing EmployeeInfo class,
  * go to FortuneEmployee class to apply all the fields and attributes.
  * 
  * Important: YOU MUST USE the 
@@ -21,7 +21,8 @@ public class EmployeeInfo {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	
+
+
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
@@ -40,7 +41,7 @@ public class EmployeeInfo {
 	}
 	
 	/*
-	 * This methods should calculate Employee bonus based on salary and performance.
+	 * These methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
 	 * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on. 
 	 * You can set arbitrary number for performance.
@@ -57,7 +58,7 @@ public class EmployeeInfo {
 
 
 	/*
-	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
+	 * These methods should calculate Employee Pension based on salary and numbers of years with the company.
 	 * Then it will return the total pension. So you need to implement the logic.
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
@@ -79,6 +80,32 @@ public class EmployeeInfo {
 
 		return total;
 	}
+
+	@Override
+	public int employeeId() {
+		return 0;
+	}
+
+	@Override
+	public String employeeName() {
+		return null;
+	}
+
+	@Override
+	public void assignDepartment() {
+
+	}
+
+	@Override
+	public int calculateSalary() {
+		return 0;
+	}
+
+	@Override
+	public void benefitLayout() {
+
+	}
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}

@@ -6,3 +6,4 @@ public interface Laptop {
 
     public void monitorSize(int screenSize);
 }
+
