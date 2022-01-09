@@ -64,7 +64,7 @@ public class Numbers {
 		List<String> quickSortNumbers = connectToSqlDB.readDataBase("quick_sort", "SortingNumbers");
 		printValue(quickSortNumbers);
 		//Heap Sort
-		algo.heapSort(num);
+		Sort.heapSort(num);
 		long heapSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Heap Sort take: " + heapSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "heap_sort", "SortingNumbers");
@@ -88,27 +88,14 @@ public class Numbers {
 
 		//By following above, Continue for rest of the Sorting Algorithm....
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 		//Come to conclusion about which Sorting Algo is better in given data set of 1000000.
 
 	}
 
 	public static void storeRandomNumbers(int [] num){
 		Random rand = new Random();
-		for(int i=0; i<num.length; i++){
-			num[i] = rand.nextInt(100);
+		for(int i=0; i < num.length; i++){
+			num[i] = rand.nextInt(1000000);
 		}
 	}
 
