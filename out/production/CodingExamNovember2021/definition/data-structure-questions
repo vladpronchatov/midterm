@@ -86,18 +86,18 @@ What is Big-(O)-notation?
 describes how long an algorithm takes to run to measure efficiency.
 
 Outlined different kind of sorting algorithm with time complexity?
-Bubble sort is Quadratic time.
-Insertion sort is Quadratic time.
-Selection sort is Polynomial time.
-Heap sort is Quasilinear time.
-Quick sort is Quasilinear time.
-Merge sort is Quasilinear time.
-Shell sort is Sub-quadratic time.
+Bubble sort is O(n^2).
+Insertion sort is O(n^2).
+Selection sort is O(n^2).
+Heap sort is O(nlogn).
+Quick sort is O(nlogn).
+Merge sort is O(nlogn).
+Shell sort is O((nlog(n))^2).
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
-  a)In terms of Accessing element.-
-  b)In terms of Inserting element.-
-  c)In terms of Searching element.
-  d)In terms of Removing element.
+  a)In terms of Accessing element.- Array
+  b)In terms of Inserting element.- HashTable
+  c)In terms of Searching element. - Stack
+  d)In terms of Removing element. - Queue
 
 
