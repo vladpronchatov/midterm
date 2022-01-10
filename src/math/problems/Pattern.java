@@ -8,6 +8,7 @@ public class Pattern {
 		int n = 100;
 		for (int i = 1; i <= n; n--) {
 			System.out.print(n + " ");
+
 		}
 	}
 }

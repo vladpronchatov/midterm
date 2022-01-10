@@ -3,7 +3,7 @@ package math.problems;
 public class Fibonacci {
     public static void main(String[] args) {
         int n = 40, firstNumber = 0, secondNumber = 1;
-        System.out.print("First 40 Fibonacci numbers: ");
+        System.out.print("The first 40 Fibonacci numbers are: ");
 
         for (int i = 1; i <= n; i++) {
             int nextNumber = firstNumber + secondNumber;
