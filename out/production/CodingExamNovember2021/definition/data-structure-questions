@@ -52,7 +52,7 @@ graph is a non-linear structure of nodes organized using edges and vertices.
 
 what is the difference between the HashTable and HashMap?
 HashMap is non-synchronized, allows one null key and multiple null values.
-HashTable is synchronized, doesnt allow any null keys or null values.
+HashTable is synchronized, doesn't allow any null keys or null values.
 
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
 Array in RDBMS, Queue in Network, Tree in Hierarchical.
@@ -63,10 +63,10 @@ using get method.
 
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
 it is a runtime exception that indicates that we are trying to access an array element with an illegal index, when
-the index is ngeative or greater than or equal to the size of the array.
+the index is negative or greater than or equal to the size of the array.
 
 What are the different ways of copying an array into another array?
-cloning, using System.arraycopy() method, using variable asssignment, copy by iterating
+cloning, using System.arraycopy() method, using variable assignment, copy by iterating
 
 What is difference between an array and a linked list?
 array is fixed in length while LinkedList is not, LinkedList uses more memory in order to link nodes to the next node.
@@ -89,15 +89,67 @@ Outlined different kind of sorting algorithm with time complexity?
 Bubble sort is O(n^2).
 Insertion sort is O(n^2).
 Selection sort is O(n^2).
-Heap sort is O(nlogn).
-Quick sort is O(nlogn).
-Merge sort is O(nlogn).
+Heap sort is O(NLog).
+Quick sort is O(NLog).
+Merge sort is O(NLog).
 Shell sort is O((nlog(n))^2).
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
-  a)In terms of Accessing element.- Array
-  b)In terms of Inserting element.- HashTable
-  c)In terms of Searching element. - Stack
-  d)In terms of Removing element. - Queue
+  a)In terms of Accessing element.-
+  b)In terms of Inserting element.-
+  c)In terms of Searching element.
+  d)In terms of Removing element.
+1. Array-
+1.a Fast Access.
+1.b Slow Insertion.
+1.c Slow search.
+1.d Slow deletion.
+
+2. Stack
+2.a Slow Access.
+2.b Fast Insertion.
+2.c Slow Search.
+2.d Fast Deletion.
+
+3. Queue
+3a. Slow access.
+3b. Fast Insertion.
+3c. Slow Search.
+3d. Fast Deletion.
+
+4. LinkedList
+4a. Slow access.
+4b. Fast Insertion.
+4c. Slow Search.
+4d. Fast Deletion.
+
+5. HashTable
+5a. N/A.
+5b. Fast Insertion.
+5c. Fast Search.
+5d. Fast Deletion.
+
+6. Binary Tree
+6a. Slow Access.
+6b. Fast Insertion.
+6c. Fast Searching.
+6d. Slow Deletion.
+
+7. Binary Search
+7a. Slow Access.
+7b. Fast Insertion.
+7c. Fast Search.
+7d. Fast Deletion.
+
+8. Heap
+8a. Slow Access.
+8b. Fast Insertion.
+8c. Fast Search.
+8d. Fast Deletion.
+
+
+
+
+
 
 
