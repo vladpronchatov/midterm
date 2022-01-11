@@ -9,7 +9,7 @@ public class CsvReader {
 
     public static void main(String[] args) {
         /*
-         Coma Separated Value(CSV) of your CodeLab status is downloaded and it parsed.
+         Comma Separated Value(CSV) of your CodeLab status is downloaded and it parsed.
          Based on number of solution you solved, message is generated for you.
          You need to find the average score of the class.
          */
@@ -18,13 +18,13 @@ public class CsvReader {
         String line = "";
         String cvsSplitBy = ",";
         BufferedReader br = null;
-        List<Trainee> roster = new ArrayList<Trainee>();
+        List<Trainee> roster = new ArrayList<>();
 
         try {
             br = new BufferedReader(new FileReader(csvFilePath));
             int lineNumber = 0;
             while ((line = br.readLine()) != null) {
-                if(lineNumber == 0) {
+                if (lineNumber == 0) {
                     lineNumber++;
                     continue;
                 }
@@ -38,31 +38,38 @@ public class CsvReader {
             e.printStackTrace();
         }
         Collections.sort(roster);
-        for(Trainee student:roster) {
-            if (student.getNumberOfExercisesSolved()>=600) {
+        for (Trainee student : roster) {
+            if (student.getNumberOfExercisesSolved() >= 600) {
                 System.out.print("You did pretty good-->                    ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            } else if (student.getNumberOfExercisesSolved()>=500 && student.getNumberOfExercisesSolved()<600) {
+            } else if (student.getNumberOfExercisesSolved() >= 500 && student.getNumberOfExercisesSolved() < 600) {
                 System.out.print("You could do little better-->             ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            }else if (student.getNumberOfExercisesSolved()>=400 && student.getNumberOfExercisesSolved()<500) {
+            } else if (student.getNumberOfExercisesSolved() >= 400 && student.getNumberOfExercisesSolved() < 500) {
                 System.out.print("You could do better-->                    ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            }else if (student.getNumberOfExercisesSolved()>=300&& student.getNumberOfExercisesSolved()<400) {
+            } else if (student.getNumberOfExercisesSolved() >= 300 && student.getNumberOfExercisesSolved() < 400) {
                 System.out.print("You should have done more-->              ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            }else if (student.getNumberOfExercisesSolved()>=200&&student.getNumberOfExercisesSolved()<300) {
+            } else if (student.getNumberOfExercisesSolved() >= 200 && student.getNumberOfExercisesSolved() < 300) {
                 System.out.print("You haven't done enough-->                 ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            }else if (student.getNumberOfExercisesSolved()>=100&&student.getNumberOfExercisesSolved()<200) {
+            } else if (student.getNumberOfExercisesSolved() >= 100 && student.getNumberOfExercisesSolved() < 200) {
                 System.out.print("You did not take this Codelab seriously enough-->   ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
-            }else if (student.getNumberOfExercisesSolved()<100) {
+            } else if (student.getNumberOfExercisesSolved() < 100) {
                 System.out.print("You did not like Codelab !-->                           ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
         }
-
+        System.out.println(classAverage(roster));
     }
 
+    static double classAverage(List<Trainee> roster) {
+        int sum = 0, num = roster.size();
+        for (Trainee student : roster) {
+            sum += student.getNumberOfExercisesSolved();
+        }
+        return sum/num;
+    }
 }
