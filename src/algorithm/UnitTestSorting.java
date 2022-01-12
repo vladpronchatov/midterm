@@ -45,7 +45,7 @@ public class UnitTestSorting {
             ex.getMessage();
         }
 
-        sort.quickSort(unSortedArray);
+        sort.quickSort(unSortedArray, 0, unSortedArray.length - 1 );
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
         }catch(Exception ex){

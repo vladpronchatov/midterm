@@ -1,10 +1,6 @@
 package design;
 
-public class FortuneEmployee extends EmployeeInfo{
-
-	public FortuneEmployee(String name, int employeeId) {
-		super(name, employeeId);
-	}
+public class FortuneEmployee{
 
 	/**
 	 * FortuneEmployee class has a main methods where you will be able to create Object from
