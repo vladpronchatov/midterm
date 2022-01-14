@@ -18,11 +18,11 @@ public interface Employee {
 	
 	//assignDepartment() will assign employee to departments
 
-    public void assignDepartment();
+    public void assignDepartment(String departmentName);
 	
 	//calculate employee salary
 
-	public int calculateSalary();
+	public int calculateSalary(int salary);
 	
 	//employee benefit
 

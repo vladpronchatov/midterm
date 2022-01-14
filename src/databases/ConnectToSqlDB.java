@@ -36,22 +36,22 @@ public class ConnectToSqlDB {
         ism.close();
         return prop;
     }
-    public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
+    public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException, NullPointerException {
         try {
             Properties prop = loadAwsProperties();
-            String driverClass = prop.getProperty("MYSQLJDBC.driver");
-            String url = prop.getProperty("MYSQLJDBC.url");
-            String userName = prop.getProperty("MYSQLJDBC.userName");
-            String password = prop.getProperty("MYSQLJDBC.password");
+            String driverClass = prop.getProperty("com.mysql.cj.jdbc.Driver");
+            String url = prop.getProperty("jdbc:mysql://september2020-sql-db.cift0elli9qh.us-east-1.rds.amazonaws.com/sdet2020?serverTimezone=UTC&useSSL=false");
+            String userName = prop.getProperty("admin");
+            String password = prop.getProperty("september2020db");
             Class.forName(driverClass);
             connect = DriverManager.getConnection(url, userName, password);
             System.out.println("Database is connected");
         }catch (Exception ex){
             Properties prop = loadLocalProperties();
-            String driverClass = prop.getProperty("MYSQLJDBC.driver");
-            String url = prop.getProperty("MYSQLJDBC.url");
-            String userName = prop.getProperty("MYSQLJDBC.userName");
-            String password = prop.getProperty("MYSQLJDBC.password");
+            String driverClass = prop.getProperty("com.mysql.cj.jdbc.Driver");
+            String url = prop.getProperty("jdbc:mysql://localhost/PNT?serverTimezone=UTC&useSSL=false");
+            String userName = prop.getProperty("root");
+            String password = prop.getProperty("abc123");
             Class.forName(driverClass);
             connect = DriverManager.getConnection(url, userName, password);
             System.out.println("Database is connected");
@@ -60,16 +60,14 @@ public class ConnectToSqlDB {
     }
 
     public List<String> readDataBase(String tableName, String columnName)throws Exception{
-        List<String> data = new ArrayList<String>();
+        List<String> data;
 
         try {
             connectToSqlDatabase();
             statement = connect.createStatement();
             resultSet = statement.executeQuery("select * from " + tableName);
             data = getResultSetData(resultSet, columnName);
-        } catch (ClassNotFoundException e) {
-            throw e;
-        }finally{
+        } finally{
             close();
         }
         return data;
@@ -86,13 +84,13 @@ public class ConnectToSqlDB {
             if(connect != null){
                 connect.close();
             }
-        }catch(Exception e){
-
+        }catch(Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private List<String> getResultSetData(ResultSet resultSet2, String columnName) throws SQLException {
-        List<String> dataList = new ArrayList<String>();
+    private List<String> getResultSetData(ResultSet ResultSet2, String columnName) throws SQLException {
+        List<String> dataList = new ArrayList<>();
         while(resultSet.next()){
             String itemName = resultSet.getString(columnName);
             dataList.add(itemName);
@@ -108,18 +106,14 @@ public class ConnectToSqlDB {
             ps.executeUpdate();
             ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+columnName+"` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
-            for(int n=0; n<ArrayData.length; n++){
-                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
-                ps.setInt(1,ArrayData[n]);
+            for (int arrayDatum : ArrayData) {
+                ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName + " ) VALUES(?)");
+                ps.setInt(1, arrayDatum);
                 ps.executeUpdate();
             }
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -131,26 +125,20 @@ public class ConnectToSqlDB {
             ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
             ps.setString(1,ArrayData);
             ps.executeUpdate();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
-        List<String> data = new ArrayList<String>();
+        List<String> data;
 
         try {
             connectToSqlDatabase();
             statement = connect.createStatement();
             resultSet = statement.executeQuery(passQuery);
             data = getResultSetData(resultSet, dataColumn);
-        } catch (ClassNotFoundException e) {
-            throw e;
-        }finally{
+        } finally{
             close();
         }
         return data;
@@ -170,11 +158,7 @@ public class ConnectToSqlDB {
                 ps.executeUpdate();
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -190,16 +174,12 @@ public class ConnectToSqlDB {
                 ps.executeUpdate();
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static List<User> readUserProfileFromSqlTable()throws IOException, SQLException, ClassNotFoundException{
+    public static List<User> readUserProfileFromSqlTable() {
         List<User> list = new ArrayList<>();
         User user = null;
         try{
