@@ -9,7 +9,7 @@ public class CsvReader {
 
     public static void main(String[] args) {
         /*
-         Comma Separated Value(CSV) of your CodeLab status is downloaded and it parsed.
+         Comma Separated Value(CSV) of your CodeLab status is downloaded, and it parsed.
          Based on number of solution you solved, message is generated for you.
          You need to find the average score of the class.
          */
