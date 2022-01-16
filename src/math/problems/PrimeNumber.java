@@ -1,22 +1,36 @@
 package math.problems;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class PrimeNumber {
 	public static void main(String[] args) {
-		int min = 2;
-		int max = 1000000;
-		for(int n=min; n <= max; n++) {
-			if(isPrime(n)) {
-				System.out.println(n);
+		List<Integer> list = new ArrayList<>();
+		for (int n = 2; n <= 1000000; n++) {
+			list = getPrimeNumbers(n);
+		}
+		for (Integer integer : list) {
+			System.out.println(integer);
+		}
+		System.out.println("Total prime numbers are: " + list.size());
+	}
+	public static List<Integer> getPrimeNumbers(int num){
+		List<Integer> primeList = new ArrayList<>();
+		for(int j=2; j<num; j++){
+			if(isPrime(j)){
+				primeList.add(j);
 			}
 		}
+		return primeList;
 	}
+
 	public static boolean isPrime(int num) {
 		for (int i = 2; i <= num / i; i++) {
 			if (num % i == 0) {
 				return false;
 			}
 		}
-
 		return true;
 	}
 }
