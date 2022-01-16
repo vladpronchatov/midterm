@@ -7,10 +7,10 @@ public class StudentsInfo implements Serializable {
     /*
      * Student class have 4 variables which will be constructed as Student Object into List<Student>.
      */
-    public String firstName;
-    public String lastName;
-    public String score;
-    public String id;
+    private String firstName;
+    private String lastName;
+    private String score;
+    private String id;
 
     public StudentsInfo(){}
 

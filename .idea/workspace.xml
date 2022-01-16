@@ -4,9 +4,7 @@
     <list default="true" id="ee99b452-be74-4dd6-b1e9-31f265d1c9ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/databases/ConnectToSqlDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/ConnectToSqlDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lambdaexpression/anonymous/OperateLaptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lambdaexpression/anonymous/OperateLaptop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lambdaexpression/iterator/IterateList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lambdaexpression/iterator/IterateList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lambdaexpression/iterator/IterateUsingLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lambdaexpression/iterator/IterateUsingLambda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/databases/StudentsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/StudentsInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.IterateUsingLambda">
+  <component name="RunManager" selected="Application.ConnectToMongoDB">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -165,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConnectToMongoDB" />
         <item itemvalue="Application.IterateUsingLambda" />
         <item itemvalue="Application.IterateList" />
         <item itemvalue="Application.FortuneEmployee" />
         <item itemvalue="Application.ConnectToSqlDB" />
-        <item itemvalue="Application.ConnectToMongoDB" />
       </list>
     </recent_temporary>
   </component>
@@ -207,13 +205,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/databases/ConnectToMongoDB.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/databases/ConnectToSqlDB.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="43" />
+          <line>22</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
