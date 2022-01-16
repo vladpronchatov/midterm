@@ -7,29 +7,37 @@ import java.util.function.Consumer;
 public class IterateList {
     public static void main(String[] args) {
         List<String> electronicsList = Arrays.asList("Laptop", "Tablet", "Television", "Monitor");
-        System.out.println("Classic enhanced for loop");
+        System.out.println("Classic enhanced for loop:");
         for (String items : electronicsList) {
-            System.out.println(items);
+            if (items.startsWith("T")) {
+                System.out.println(items);
+            }
         }
 
         //Please implement Anonymous class to iterate through
-        System.out.println("Using Anonymous class");
+        System.out.println("Using Anonymous class:");
 
 
         //Please implement lambda expression to iterate through electronicsList
-        System.out.println("Lambda Expression");
+        System.out.println("Lambda Expression:");
 
 
         //Please implement lambda Method Reference to iterate through electronicsList
-        System.out.println("Lambda Method Reference-1");
+        System.out.println("Lambda Method Reference-1:");
+        electronicsList.forEach(System.out::println);
+        electronicsList.forEach(Electronics::countWordLength);
 
 
         //Please implement lambda Method Reference from Electronics class to iterate through electronicsList
-        System.out.println("Lambda Method Reference-2 using Electronics class");
+        System.out.println("Lambda Method Reference-2 using Electronics class:");
 
         //Please implement stream iteration through electronicsList
-        System.out.println("iterate using Stream for each loop");
+        System.out.println("iterate using Stream for each loop:");
+        electronicsList.stream()
+                        .filter((items -> items.startsWith("T")))
+                                .forEach(System.out::println);
 
     }
 
 }
+

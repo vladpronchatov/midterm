@@ -63,7 +63,7 @@ public class ConnectToSqlDB {
         List<String> data;
 
         try {
-            connectToSqlDatabase();
+            connect = connectToSqlDatabase();
             statement = connect.createStatement();
             resultSet = statement.executeQuery("select * from " + tableName);
             data = getResultSetData(resultSet, columnName);
@@ -101,7 +101,7 @@ public class ConnectToSqlDB {
     public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
     {
         try {
-            connectToSqlDatabase();
+            connect = connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
             ps.executeUpdate();
             ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+columnName+"` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
@@ -118,10 +118,10 @@ public class ConnectToSqlDB {
         }
     }
 
-    public void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName)
+    public static void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName)
     {
         try {
-            connectToSqlDatabase();
+            connect = connectToSqlDatabase();
             ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
             ps.setString(1,ArrayData);
             ps.executeUpdate();
@@ -144,10 +144,10 @@ public class ConnectToSqlDB {
         return data;
     }
 
-    public void insertDataFromArrayListToSqlTable(List<Student> list, String tableName, String columnName)
+    public static void insertDataFromArrayListToSqlTable(List<Student> list, String tableName, String columnName)
     {
         try {
-            connectToSqlDatabase();
+            connect = connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
             ps.executeUpdate();
             ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
@@ -164,10 +164,10 @@ public class ConnectToSqlDB {
     }
 
 
-    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
+    public static void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
     {
         try {
-            connectToSqlDatabase();
+            connect = connectToSqlDatabase();
                 ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + " ) VALUES(?,?)");
                 ps.setString(1,"Ankita Sing");
                 ps.setInt(2,3590);
